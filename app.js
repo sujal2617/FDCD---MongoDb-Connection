@@ -11,14 +11,18 @@ app.get("/", (req, res) => {
 
 app.use("/v0/api", UserReg);
 
-const URI = "mongodb://localhost:27017/dbconnect";
-// mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+
+const URI1 = "mongodb+srv://sujalpattewar26:8khS3n3cti3KbtLe@mongo-test.r40fd.mongodb.net/?retryWrites=true&w=majority&appName=Mongo-Test";
+const URI2 = "mongodb://localhost:27017/dbconnect";
+
+// mongoose.connect(URI1, { useNewUrlParser: true, useUnifiedTopology: true })
 //     .then(() => console.log("Mongodb Connected Successfully......"))
 //     .catch((err) => {
 //         console.log(err);
 //     });
-mongoose.connect(URI)
-    .then(() => console.log("Mongodb Connected Successfully......"))
+
+mongoose.connect(URI1)
+    .then(()=> console.log("Mongodb Connected Successfully......"))
     .catch((err) => {
         console.log(err);
     });
@@ -33,19 +37,24 @@ app.listen(5000, () => {
 
 
 
-
-
-// import express from "express"
-// import mongoose from "mongoose";
-// import dotenv from "dotenv";
+//
+// const express = require("express");
+// const mongoose = require("mongoose");
+// // import express from "express"
+// // import mongoose from "mongoose";
+// // import dotenv from "dotenv";
 //
 // const app = express();
-// dotenv.config();
+// // dotenv.config();
 //
-// const PORT = process.env.PORT || 7000;
-// const MONGOURL = process.env.MONGO_URL;
+// // const PORT = process.env.PORT || 7000;
+// // const MONGOURL = process.env.MONGO_URL;
 //
-// mongoose.connect(MONGOURL).then(() => {
+// const PORT=8000
+// const MONGO_URL = "mongodb+srv://sujalpattewar26:8khS3n3cti3KbtLe@mongo-test.r40fd.mongodb.net/?retryWrites=true&w=majority&appName=Mongo-Test"
+//
+//
+// mongoose.connect(MONGO_URL).then(() => {
 //     console.log("Connected to MongoDB");
 //     app.listen(PORT,()=>{
 //         console.log(`Server is running on port ${PORT}`);
