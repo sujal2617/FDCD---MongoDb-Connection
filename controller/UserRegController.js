@@ -12,7 +12,7 @@ exports.CreateUserReg = async (req, res) => {
 
 exports.GetAllUsers = async (req, res) => {
     try {
-        const getusers = await UserReg.find(); // Fix here: Find all users
+        const getusers = await UserReg.find();
         res.status(200).json(getusers);
     } catch (err) {
         res.status(400).json({ message: err.message });
